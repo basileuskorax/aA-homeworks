@@ -2,7 +2,7 @@ class Board
   attr_accessor :cups, :stone
 
   def initialize(name1, name2)
-    @cups = Array.new(14){Array.new}
+    @cups = Array.new(14){[]}
     place_stones
   end
 
@@ -13,8 +13,7 @@ class Board
   end
 
   def valid_move?(start_pos)
-    raise 'Invalid starting cup' unless (0...13).include?(start_pos)
-    raise 'Invalid starting cup' unless (0...13).include?(:stone)
+    raise 'Invalid starting cup' unless (1...13).include?(start_pos)
   end
 
   def make_move(start_pos, current_player_name)
@@ -65,8 +64,3 @@ class Board
   def winner
   end
 end
-
-# Nontechnical Overview of Ruby (15 min)
-# CSS Intro (8 min)
-# CSS Workflow (12 min)
-# Mancala
